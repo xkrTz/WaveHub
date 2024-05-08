@@ -13,7 +13,7 @@ p {
 
 footer {
   text-align: center;
-  margin-top: 100px;
+  margin-top: 320px;
 }
 
 .profileContainer {
@@ -25,7 +25,7 @@ footer {
 }
 
 .profileRow {
-  margin: 0px 80px;
+  margin: 0px 10px; /* Alterado para uma margem menor */
   width: 100%;
   max-width: 85vw;
   text-align: center;
@@ -41,52 +41,30 @@ footer {
 }
 
 .profilePicture {
-  height: 170px;
-  width: 170px;
+  height: 150px;
+  width: 150px;
   margin-bottom: 15px;
   border-radius: 50%;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 1);
 }
 
-.profileName {
+.profileName, .profileSurname, .profileRole, .profileAbout {
   color: #d6cdc2;
   font-family: 'Roboto', sans-serif;
-  font-size: 1.5em;
-  font-weight: 500;
-  letter-spacing: 3px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.profileSurname {
-  color: #d6cdc2;
-  font-family: 'Roboto', sans-serif;
-  font-size: 1.5em;
   font-weight: 500;
   letter-spacing: 3px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .profileRole {
-  color: #d6cdc2;
-  font-family: 'Roboto', sans-serif;
-  font-size: 1em;
-  font-weight: 500;
-  letter-spacing: 3px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 1em; /* Reduzindo o tamanho da fonte */
 }
 
 .profileAbout {
-  color: #d6cdc2;
-  font-family: 'Roboto', sans-serif;
   font-size: 0.8em;
-  font-weight: 500;
-  letter-spacing: 1px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .linkButton {
-  display: flex;
-  align-items: center;
   background-color: #80AAA8;
   color: #d6cdc2;
   border: 2px solid #001858;
@@ -94,26 +72,38 @@ footer {
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
+  display: block;
   font-size: 16px;
   font-weight: 500;
-  margin: 13px 2px;
+  margin: 13px auto;
   cursor: pointer;
-  width: 632px;
   height: auto;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 1.5);
   transition: transform 0.5s ease-in-out;
+  max-width: 700px;
 }
 
-.linkButton:hover{
-transform: scale(1.1);
+.linkButton:hover {
+  transform: scale(1.1);
 }
 
-
-.linkButton i:first-child {
-  margin-right: 260px;
+.linkButton i:first-child, .linkButton i:last-child {
+  margin-right: 60px;
+  margin-left: 60px; /* Reduzindo a margem entre os ícones */
 }
 
-.linkButton i:last-child {
-  margin-left: 260px;
+/* Media query para telas menores que 768px (celulares) */
+@media (max-width: 768px) {
+  .profileRow {
+    margin: 0px; /* Removendo a margem nas laterais */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza os itens horizontalmente */
+  }
+
+  .linkButton {
+    width: 100%; /* Botões ocupam 100% da largura */
+    max-width: 150px; /* Definindo uma largura máxima */
+    margin: 10px 0; /* Adicionando margem entre os botões */
+  }
 }
